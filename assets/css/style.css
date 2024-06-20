@@ -265,12 +265,12 @@
   ::-webkit-scrollbar {
     width: 9px;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: var(--clr-neutral-200);
     border-radius: 20px;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: var(--clr-primary-500);
     border: 2px solid var(--clr-neutral-000);
@@ -331,7 +331,7 @@
     margin-inline: auto;
 
     &[data-type="narrow"] {
-      --_wrapper-max-width: 40rem;
+      --_wrapper-max-width: 48rem;
     }
 
     &[data-type="wide"] {
@@ -1010,3 +1010,110 @@
     background-color: var(--clr-neutral-200);
   }
 }
+
+/*-------------------------------
+    #SERVICES
+-------------------------------*/
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--size-rem-8) var(--size-rem-6);
+}
+
+.service-item {
+  width: min(100%, 220px);
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  gap: var(--size-rem-4);
+
+  .card-content {
+    padding: 0;
+    gap: var(--size-rem-1);
+
+    h5 {
+      font-weight: var(--fw-semibold);
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: var(--fs-200);
+    }
+  }
+}
+
+.card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: var(--size-rem-10);
+  padding: var(--size-em-2);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--clr-primary-500);
+
+  img {
+    filter: brightness(10);
+  }
+}
+
+/*-------------------------------
+    #INSTA POST
+-------------------------------*/
+.insta-post-list {
+  gap: 0;
+}
+
+.insta-post-item {
+  position: relative;
+  min-width: 50%;
+  aspect-ratio: 1 / 1;
+
+  @media (width >= 320px) {
+    min-width: 33.33%;
+  }
+
+  @media (width >= 575px) {
+    min-width: 25%;
+  }
+
+  @media (width >= 768px) {
+    min-width: 20%;
+  }
+
+  @media (width >= 992px) {
+    min-width: 16.66%;
+  }
+}
+
+.insta-post-link {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background-color: var(--clr-neutral-a60);
+  color: var(--clr-neutral-000);
+
+  opacity: 0;
+  transition: var(--transition-250);
+
+  .insta-post-item:is(:hover, :focus-visible) & {
+    opacity: 1;
+  }
+
+  .insta-post-item:is(:hover, :focus-visible) + .insta-post-item & {
+    opacity: 0.15;
+  }
+
+  .insta-post-item:has(+ :is(:hover, :focus-visible)) & {
+    opacity: 0.15;
+  }
+}
+
+/*-------------------------------
+    #FOOTER
+-------------------------------*/
