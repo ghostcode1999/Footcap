@@ -23,4 +23,68 @@ const on = (eventType, selector, listener, all = false) => {
   }
 };
 
-export { select, on };
+/*---------------------------
+    #Helper function to handle load event listeners
+-----------------------------*/
+const onLoad = (listener) => {
+  window.addEventListener("load", listener);
+};
+
+/*---------------------------
+    #Helper function to handle scroll event listeners
+-----------------------------*/
+const onScroll = (el, listener) => {
+  el.addEventListener("scroll", listener);
+};
+
+/*---------------------------
+    #Helper function to scroll to a specific section
+-----------------------------*/
+function scrollto(selector, offset) {
+  const elPos = selector.offsetTop;
+  window.scrollTo({
+    top: elPos - offset,
+    behavior: "smooth",
+  });
+}
+
+/*---------------------------
+    #Add / Remove / Toggle classes
+-----------------------------*/
+function addClass(selector, className) {
+  if (selector.length > 1) {
+    selector.forEach((el) => el.classList.add(className));
+    return;
+  }
+
+  selector.classList.add(className);
+}
+
+function removeClass(selector, className) {
+  if (selector.length > 1) {
+    selector.forEach((el) => el.classList.remove(className));
+    return;
+  }
+
+  selector.classList.remove(className);
+}
+
+function toggleClass(selector, className) {
+  if (selector.length > 1) {
+    selector.forEach((el) => el.classList.toggle(className));
+    return;
+  }
+
+  selector.classList.toggle(className);
+}
+
+export {
+  select,
+  on,
+  onLoad,
+  onScroll,
+  scrollto,
+  addClass,
+  removeClass,
+  toggleClass,
+};
