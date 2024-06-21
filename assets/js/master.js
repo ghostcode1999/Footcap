@@ -1,3 +1,5 @@
+"use strict";
+
 import allProducts from "../data/products.js";
 import {
   select,

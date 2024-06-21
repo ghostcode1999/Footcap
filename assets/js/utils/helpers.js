@@ -1,3 +1,5 @@
+"use strict";
+
 /*---------------------------
     #Helper function to select DOM elements
 -----------------------------*/
