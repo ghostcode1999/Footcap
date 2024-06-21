@@ -5,6 +5,8 @@ import {
   addClass,
   removeClass,
   toggleClass,
+  onScroll,
+  scrollto,
 } from "./utils/helpers.js";
 
 (function () {
@@ -12,18 +14,12 @@ import {
     #Toggle primary navbar
 -------------------------------*/
   const navToggler = select("[data-nav-toggler]");
+  const navCloseBtn = select("[data-nav-close-btn]");
   const overlay = select("[data-overlay]");
-  const navLinks = select("[data-nav-link]", true);
 
-  on("click", navToggler, function () {
-    this.classList.add("is-active");
-  });
+  const navElems = [navToggler, navCloseBtn, overlay];
 
-  on("click", overlay, function () {
-    navToggler.classList.remove("is-active");
-  });
-
-  on("click", navLinks, () => navToggler.classList.remove("is-active"));
+  on("click", navElems, () => toggleClass(navToggler, "is-active"));
 
   /*
     #Generate products HTML
@@ -36,7 +32,9 @@ import {
         <li class="product-item | is-active" data-badge="${product.filter}">
               <div class="product-card">
                 <figure class="card-banner">
-                  <img src="${product.img}" alt="Shoes" />
+                  <img src="${product.img}" alt="${
+      product.title
+    }" loading="lazy" width="312" height="350"/>
                   ${
                     product.badge
                       ? `<span class='card-badge'>${product.badge}</span>`
@@ -44,26 +42,26 @@ import {
                   }
                   <ul class="card-action-list">
                     <li class="card-action-item">
-                      <div class="card-action-tooltip">Add to Cart</div>
-                      <button class="card-action-btn">
+                      <div class="card-action-tooltip" id="card-label-1">Add to Cart</div>
+                      <button class="card-action-btn" aria-labelledby="card-label-1">
                         <i class="fa fa-cart-plus fa-xs"></i>
                       </button>
                     </li>
                     <li class="card-action-item">
-                      <div class="card-action-tooltip">Add to Wishlist</div>
-                      <button class="card-action-btn">
+                      <div class="card-action-tooltip" id="card-label-2">Add to Wishlist</div>
+                      <button class="card-action-btn" aria-labelledby="card-label-2">
                         <i class="fa fa-heart fa-xs"></i>
                       </button>
                     </li>
                     <li class="card-action-item">
-                      <div class="card-action-tooltip">Quick View</div>
-                      <button class="card-action-btn">
+                      <div class="card-action-tooltip" id="card-label-3">Quick View</div>
+                      <button class="card-action-btn" aria-labelledby="card-label-3">
                         <i class="fa fa-eye fa-xs"></i>
                       </button>
                     </li>
                     <li class="card-action-item">
-                      <div class="card-action-tooltip">Compare</div>
-                      <button class="card-action-btn">
+                      <div class="card-action-tooltip" id="card-label-4">Compare</div>
+                      <button class="card-action-btn" aria-labelledby="card-label-4">
                         <i class="fa fa-repeat fa-xs"></i>
                       </button>
                     </li>
@@ -125,5 +123,26 @@ import {
 
   on("click", productsFilters, function () {
     filterProducts(this);
+  });
+
+  /*
+    #Toggle has-scrolled class on body element when scrolling
+-------------------------------*/
+  onScroll(window, () => {
+    scrollY > 100
+      ? addClass(document.body, "has-scrolled")
+      : removeClass(document.body, "has-scrolled");
+  });
+
+  /*
+    #Back to top button
+-------------------------------*/
+  const backTopBtn = select("[data-back-top-btn]");
+
+  on("click", backTopBtn, () => {
+    scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   });
 })();

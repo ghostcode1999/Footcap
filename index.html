@@ -19,7 +19,7 @@
     <!-- Main CSS file -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Preload -->
-    <link rel="preload" href="./assets/images/hero-banner.png" />
+    <link rel="preload" href="./assets/images/hero-banner.png" as="image" />
   </head>
   <body>
     <!-- Start Header -->
@@ -28,14 +28,35 @@
       <div class="progress-bar"></div>
       <div class="primary-header__inner | wrapper">
         <a href="index.html" class="logo">
-          <img src="assets/images/logo.svg" alt="Footcap" />
+          <img
+            src="assets/images/logo.svg"
+            alt="Footcap logo"
+            width="160"
+            height="50"
+          />
         </a>
-        <button class="nav-toggler" data-nav-toggler>
+        <button
+          class="nav-toggler"
+          data-nav-toggler
+          aria-label="Open Navbar Menu"
+        >
           <i class="fa fa-bars fa-lg"></i>
         </button>
         <nav class="primary-nav">
+          <button
+            class="nav-close-btn"
+            data-nav-close-btn
+            aria-label="Close Navbar Menu"
+          >
+            <i class="fa fa-close"></i>
+          </button>
           <a href="index.html" class="primary-nav__logo">
-            <img src="assets/images/logo.svg" alt="Footcap" />
+            <img
+              src="assets/images/logo.svg"
+              alt="Footcap logo"
+              width="190"
+              height="50"
+            />
           </a>
           <ul class="nav-list">
             <li><a href="#" data-scrollto="" data-nav-link>Home</a></li>
@@ -85,7 +106,10 @@
       <!-- Start Hero -->
       <section class="hero">
         <div class="hero__inner | wrapper">
-          <div class="hero__text | flow">
+          <div
+            class="hero__text | flow"
+            style="--flow-spacer: var(--size-rem-6)"
+          >
             <h1>
               <span>New Summer</span><br />
               Shoes Collection
@@ -104,7 +128,7 @@
       <!-- End Hero -->
       <!-- Start Collection -->
       <section class="collection | section">
-        <div class="collection-wrapper | wrapper">
+        <div class="collection-wrapper | wrapper grid-auto grid-fit">
           <div class="collection-card | stack">
             <img src="assets/images/collection-1.jpg" alt="Men collections" />
             <div class="collection-card__text">
@@ -162,7 +186,7 @@
             </li>
           </ul>
 
-          <ul class="products-list"></ul>
+          <ul class="products-list | grid-auto grid-fit"></ul>
         </div>
       </section>
       <!-- End Products -->
@@ -187,7 +211,7 @@
         <div class="special-wrapper | wrapper">
           <div class="special-banner | stack">
             <figure class="special-banner-img">
-              <img src="assets/images/special-banner.jpg" alt="#" />
+              <img src="assets/images/special-banner.jpg" alt="Shoes banner" />
             </figure>
             <div class="special-banner-text | text-center">
               <h4>New Trend Edition</h4>
@@ -202,30 +226,56 @@
               <li class="product-item">
                 <div class="product-card">
                   <figure class="card-banner">
-                    <img src="assets/images/product-1.jpg" alt="Shoes" />
+                    <img
+                      src="assets/images/product-1.jpg"
+                      width="312"
+                      height="350"
+                      loading="lazy"
+                      alt="Running Sneaker Shoes"
+                    />
 
                     <ul class="card-action-list">
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Add to Cart</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-1">
+                          Add to Cart
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-1"
+                        >
                           <i class="fa fa-cart-plus fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Add to Wishlist</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-2">
+                          Add to Wishlist
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-2"
+                        >
                           <i class="fa fa-heart fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Quick View</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-3">
+                          Quick View
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-3"
+                        >
                           <i class="fa fa-eye fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Compare</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-4">
+                          Compare
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-4"
+                        >
                           <i class="fa fa-repeat fa-xs"></i>
                         </button>
                       </li>
@@ -246,30 +296,57 @@
               <li class="product-item">
                 <div class="product-card">
                   <figure class="card-banner">
-                    <img src="assets/images/product-2.jpg" alt="Shoes" />
+                    <img
+                      src="assets/images/product-2.jpg"
+                      alt="Shoes"
+                      width="312"
+                      height="350"
+                      loading="lazy"
+                      alt="Running Sneaker Shoes"
+                    />
 
                     <ul class="card-action-list">
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Add to Cart</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-1">
+                          Add to Cart
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-1"
+                        >
                           <i class="fa fa-cart-plus fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Add to Wishlist</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-2">
+                          Add to Wishlist
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-2"
+                        >
                           <i class="fa fa-heart fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Quick View</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-3">
+                          Quick View
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-3"
+                        >
                           <i class="fa fa-eye fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Compare</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-4">
+                          Compare
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-4"
+                        >
                           <i class="fa fa-repeat fa-xs"></i>
                         </button>
                       </li>
@@ -290,30 +367,57 @@
               <li class="product-item">
                 <div class="product-card">
                   <figure class="card-banner">
-                    <img src="assets/images/product-1.jpg" alt="Shoes" />
+                    <img
+                      src="assets/images/product-1.jpg"
+                      alt="Shoes"
+                      width="312"
+                      height="350"
+                      loading="lazy"
+                      alt="Running Sneaker Shoes"
+                    />
 
                     <ul class="card-action-list">
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Add to Cart</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-1">
+                          Add to Cart
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-1"
+                        >
                           <i class="fa fa-cart-plus fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Add to Wishlist</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-2">
+                          Add to Wishlist
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-2"
+                        >
                           <i class="fa fa-heart fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Quick View</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-3">
+                          Quick View
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-3"
+                        >
                           <i class="fa fa-eye fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Compare</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-4">
+                          Compare
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-4"
+                        >
                           <i class="fa fa-repeat fa-xs"></i>
                         </button>
                       </li>
@@ -334,30 +438,57 @@
               <li class="product-item">
                 <div class="product-card">
                   <figure class="card-banner">
-                    <img src="assets/images/product-2.jpg" alt="Shoes" />
+                    <img
+                      src="assets/images/product-2.jpg"
+                      alt="Shoes"
+                      width="312"
+                      height="350"
+                      loading="lazy"
+                      alt="Running Sneaker Shoes"
+                    />
 
                     <ul class="card-action-list">
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Add to Cart</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-1">
+                          Add to Cart
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-1"
+                        >
                           <i class="fa fa-cart-plus fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Add to Wishlist</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-2">
+                          Add to Wishlist
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-2"
+                        >
                           <i class="fa fa-heart fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Quick View</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-3">
+                          Quick View
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-3"
+                        >
                           <i class="fa fa-eye fa-xs"></i>
                         </button>
                       </li>
                       <li class="card-action-item">
-                        <div class="card-action-tooltip">Compare</div>
-                        <button class="card-action-btn">
+                        <div class="card-action-tooltip" id="card-label-4">
+                          Compare
+                        </div>
+                        <button
+                          class="card-action-btn"
+                          aria-labelledby="card-label-4"
+                        >
                           <i class="fa fa-repeat fa-xs"></i>
                         </button>
                       </li>
@@ -387,7 +518,13 @@
             <li class="service-item">
               <div class="service-card">
                 <span class="card-icon">
-                  <img src="assets/images/service-1.png" alt="#" />
+                  <img
+                    src="assets/images/service-1.png"
+                    width="53"
+                    height="28"
+                    loading="lazy"
+                    alt="Service icon"
+                  />
                 </span>
                 <div class="card-content">
                   <h5>Free Shipping</h5>
@@ -400,7 +537,13 @@
             <li class="service-item">
               <div class="service-card">
                 <span class="card-icon">
-                  <img src="assets/images/service-2.png" alt="#" />
+                  <img
+                    src="assets/images/service-2.png"
+                    width="53"
+                    height="28"
+                    loading="lazy"
+                    alt="Service icon"
+                  />
                 </span>
                 <div class="card-content">
                   <h5>Quick Payment</h5>
@@ -411,7 +554,13 @@
             <li class="service-item">
               <div class="service-card">
                 <span class="card-icon">
-                  <img src="assets/images/service-3.png" alt="#" />
+                  <img
+                    src="assets/images/service-3.png"
+                    width="53"
+                    height="28"
+                    loading="lazy"
+                    alt="Service icon"
+                  />
                 </span>
                 <div class="card-content">
                   <h5>Free Returns</h5>
@@ -422,7 +571,13 @@
             <li class="service-item">
               <div class="service-card">
                 <span class="card-icon">
-                  <img src="assets/images/service-4.png" alt="#" />
+                  <img
+                    src="assets/images/service-4.png"
+                    width="53"
+                    height="28"
+                    loading="lazy"
+                    alt="Service icon"
+                  />
                 </span>
                 <div class="card-content">
                   <h5>24/7 Support</h5>
@@ -438,44 +593,114 @@
       <section class="insta-post | section">
         <ul class="insta-post-list | has-scrollbar">
           <li class="insta-post-item">
-            <img src="assets/images/insta-1.jpg" alt="#" />
-            <a href="#" class="insta-post-link">
+            <img
+              src="assets/images/insta-1.jpg"
+              width="100"
+              height="100"
+              loading="lazy"
+              alt="Instagram post"
+            />
+            <a
+              href="#"
+              class="insta-post-link"
+              aria-label="Instagram post link"
+            >
               <i class="fab fa-instagram fa-4x"></i>
             </a>
           </li>
           <li class="insta-post-item">
-            <img src="assets/images/insta-2.jpg" alt="#" />
-            <a href="#" class="insta-post-link">
+            <img
+              src="assets/images/insta-2.jpg"
+              width="100"
+              height="100"
+              loading="lazy"
+              alt="Instagram post"
+            />
+            <a
+              href="#"
+              class="insta-post-link"
+              aria-label="Instagram post link"
+            >
               <i class="fab fa-instagram fa-4x"></i>
             </a>
           </li>
           <li class="insta-post-item">
-            <img src="assets/images/insta-3.jpg" alt="#" />
-            <a href="#" class="insta-post-link">
+            <img
+              src="assets/images/insta-3.jpg"
+              width="100"
+              height="100"
+              loading="lazy"
+              alt="Instagram post"
+            />
+            <a
+              href="#"
+              class="insta-post-link"
+              aria-label="Instagram post link"
+            >
               <i class="fab fa-instagram fa-4x"></i>
             </a>
           </li>
           <li class="insta-post-item">
-            <img src="assets/images/insta-4.jpg" alt="#" />
-            <a href="#" class="insta-post-link">
+            <img
+              src="assets/images/insta-4.jpg"
+              width="100"
+              height="100"
+              loading="lazy"
+              alt="Instagram post"
+            />
+            <a
+              href="#"
+              class="insta-post-link"
+              aria-label="Instagram post link"
+            >
               <i class="fab fa-instagram fa-4x"></i>
             </a>
           </li>
           <li class="insta-post-item">
-            <img src="assets/images/insta-5.jpg" alt="#" />
-            <a href="#" class="insta-post-link">
+            <img
+              src="assets/images/insta-5.jpg"
+              width="100"
+              height="100"
+              loading="lazy"
+              alt="Instagram post"
+            />
+            <a
+              href="#"
+              class="insta-post-link"
+              aria-label="Instagram post link"
+            >
               <i class="fab fa-instagram fa-4x"></i>
             </a>
           </li>
           <li class="insta-post-item">
-            <img src="assets/images/insta-6.jpg" alt="#" />
-            <a href="#" class="insta-post-link">
+            <img
+              src="assets/images/insta-6.jpg"
+              width="100"
+              height="100"
+              loading="lazy"
+              alt="Instagram post"
+            />
+            <a
+              href="#"
+              class="insta-post-link"
+              aria-label="Instagram post link"
+            >
               <i class="fab fa-instagram fa-4x"></i>
             </a>
           </li>
           <li class="insta-post-item">
-            <img src="assets/images/insta-7.jpg" alt="#" />
-            <a href="#" class="insta-post-link">
+            <img
+              src="assets/images/insta-7.jpg"
+              width="100"
+              height="100"
+              loading="lazy"
+              alt="Instagram post"
+            />
+            <a
+              href="#"
+              class="insta-post-link"
+              aria-label="Instagram post link"
+            >
               <i class="fab fa-instagram fa-4x"></i>
             </a>
           </li>
@@ -484,7 +709,121 @@
       <!-- End Insta Post -->
     </main>
     <!-- Start Footer -->
+    <footer class="primary-footer">
+      <div class="wrapper">
+        <div class="primary-footer-brand">
+          <a href="#" class="logo"
+            ><img
+              src="assets/images/logo.svg"
+              width="160"
+              height="50"
+              alt="Footcap logo"
+          /></a>
+          <ul class="primary-footer__social">
+            <li>
+              <a href="#" aria-label="Facebook logo">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Twitter logo">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Instagram logo">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Linkedin logo">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="primary-footer-inner | grid-auto grid-fit"
+          style="--_col-width: 20rem"
+        >
+          <div>
+            <h3 class="primary-footer__title">Contact Us</h3>
+            <ul class="flow">
+              <li>
+                <p>2751 S Parker Rd, Aurora, CO 80014, United States</p>
+              </li>
+              <li>
+                <a href="tel: +557343673257">+557343673257</a>
+              </li>
+              <li>
+                <a href="mailto: footcap@help.com">footcap@help.com</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="primary-footer__title">My Account</h3>
+            <ul class="flow">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">View Cart</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Compare</a></li>
+              <li><a href="#">New Products</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="primary-footer__title">Opening Time</h3>
+            <table class="primary-footer__table">
+              <tbody>
+                <tr class="table-row">
+                  <th>Mon - Tue:</th>
+                  <td>8AM - 10PM</td>
+                </tr>
+                <tr class="table-row">
+                  <th>Wed:</th>
+                  <td>8AM - 7PM</td>
+                </tr>
+                <tr class="table-row">
+                  <th>Fri:</th>
+                  <td>7AM - 12PM</td>
+                </tr>
+                <tr class="table-row">
+                  <th>Sat:</th>
+                  <td>9AM - 8PM</td>
+                </tr>
+                <tr class="table-row">
+                  <th>Sun:</th>
+                  <td>Closed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h3 class="primary-footer__title">Newsletter</h3>
+            <p>
+              Authoritatively morph 24/7 potentialities with error-free
+              partnerships.
+            </p>
+            <form action="#" class="primary-footer__form">
+              <input type="email" placeholder="Email Address..." />
+              <button type="submit" class="btn" data-type="primary">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="primary-footer__copyright | text-center">
+        <p>
+          &copy; 2024 <a href="#" class="text-primary-400">Ghostcode</a> - Free
+          Palestine - All Rights Reserved
+        </p>
+      </div>
+    </footer>
     <!-- End Footer -->
+    <!-- Back to Top Button -->
+    <button class="back-top-btn" data-back-top-btn aria-label="Back To Top">
+      <i class="fa fa-arrow-up"></i>
+    </button>
 
     <!-- External libraries JS files -->
     <script src="vendors/fontawesome/all.min.js"></script>
