@@ -16,12 +16,18 @@
 
     <!-- External libraries CSS files -->
     <link rel="stylesheet" href="vendors/fontawesome/all.min.css" />
+    <link rel="stylesheet" href="vendors/aos/aos.css" />
+    <link rel="stylesheet" href="vendors/glightbox/glightbox.min.css">
     <!-- Main CSS file -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Preload -->
     <link rel="preload" href="./assets/images/hero-banner.png" as="image" />
   </head>
   <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <span></span>
+    </div>
     <!-- Start Header -->
     <header class="primary-header">
       <div class="overlay" data-overlay></div>
@@ -109,6 +115,7 @@
           <div
             class="hero__text | flow"
             style="--flow-spacer: var(--size-rem-6)"
+            data-aos="fade-up"
           >
             <h1>
               <span>New Summer</span><br />
@@ -129,7 +136,7 @@
       <!-- Start Collection -->
       <section class="collection | section">
         <div class="collection-wrapper | wrapper grid-auto grid-fit">
-          <div class="collection-card | stack">
+          <div class="collection-card | stack" data-aos="fade-up" data-aos-delay="100">
             <img src="assets/images/collection-1.jpg" alt="Men collections" />
             <div class="collection-card__text">
               <h4>Men collections</h4>
@@ -138,7 +145,7 @@
               >
             </div>
           </div>
-          <div class="collection-card | stack">
+          <div class="collection-card | stack" data-aos="fade-up" data-aos-delay="300">
             <img src="assets/images/collection-2.jpg" alt="Men collections" />
             <div class="collection-card__text">
               <h4>Women collections</h4>
@@ -147,7 +154,7 @@
               >
             </div>
           </div>
-          <div class="collection-card | stack">
+          <div class="collection-card | stack" data-aos="fade-up" data-aos-delay="500">
             <img src="assets/images/collection-3.jpg" alt="Men collections" />
             <div class="collection-card__text">
               <h4>Sport collections</h4>
@@ -162,8 +169,8 @@
       <!-- Start Products -->
       <section class="products | section | text-center">
         <div class="wrapper">
-          <h2>Bestsellers Products</h2>
-          <ul class="filter-list">
+          <h2 data-aos="fade-up">Bestsellers Products</h2>
+          <ul class="filter-list" data-aos="fade-up">
             <li>
               <button class="filter-btn | is-active" data-filter="*">
                 All
@@ -193,12 +200,12 @@
       <!-- Start CTA -->
       <section class="cta | section">
         <div class="cta-wrapper | wrapper">
-          <div class="cta-card | flow">
+          <div class="cta-card | flow" data-aos="fade-right">
             <span>Adidas Shoes</span>
             <h2>The Summer Sale Off 50%</h2>
             <a href="#" class="btn-link">Shop Now</a>
           </div>
-          <div class="cta-card | flow">
+          <div class="cta-card | flow" data-aos="fade-left">
             <span>Nike Shoes</span>
             <h2>Makes Yourself Keep Sporty</h2>
             <a href="#" class="btn-link">Shop Now</a>
@@ -209,7 +216,7 @@
       <!-- Start Special -->
       <section class="special | section">
         <div class="special-wrapper | wrapper">
-          <div class="special-banner | stack">
+          <div class="special-banner | stack" data-aos="fade-up">
             <figure class="special-banner-img">
               <img src="assets/images/special-banner.jpg" alt="Shoes banner" />
             </figure>
@@ -218,7 +225,7 @@
               <a href="#" class="btn-link">Explore All</a>
             </div>
           </div>
-          <div class="special-products">
+          <div class="special-products" data-aos="fade-up">
             <h3 class="special-title | has-pseudo">
               <span>Nike Special</span>
             </h3>
@@ -515,7 +522,7 @@
       <section class="services | section">
         <div class="wrapper">
           <ul class="services-list">
-            <li class="service-item">
+            <li class="service-item" data-aos="zoom-in" data-aos-delay="100">
               <div class="service-card">
                 <span class="card-icon">
                   <img
@@ -534,7 +541,7 @@
                 </div>
               </div>
             </li>
-            <li class="service-item">
+            <li class="service-item" data-aos="zoom-in" data-aos-delay="300">
               <div class="service-card">
                 <span class="card-icon">
                   <img
@@ -551,7 +558,7 @@
                 </div>
               </div>
             </li>
-            <li class="service-item">
+            <li class="service-item" data-aos="zoom-in" data-aos-delay="500">
               <div class="service-card">
                 <span class="card-icon">
                   <img
@@ -568,7 +575,7 @@
                 </div>
               </div>
             </li>
-            <li class="service-item">
+            <li class="service-item" data-aos="zoom-in" data-aos-delay="700">
               <div class="service-card">
                 <span class="card-icon">
                   <img
@@ -590,7 +597,7 @@
       </section>
       <!-- End Services -->
       <!-- Start Insta Post -->
-      <section class="insta-post | section">
+      <section class="insta-post | section" data-aos="fade-up">
         <ul class="insta-post-list | has-scrollbar">
           <li class="insta-post-item">
             <img
@@ -601,8 +608,8 @@
               alt="Instagram post"
             />
             <a
-              href="#"
-              class="insta-post-link"
+              href="assets/images/insta-1.jpg"
+              class="insta-post-link | glightbox"
               aria-label="Instagram post link"
             >
               <i class="fab fa-instagram fa-4x"></i>
@@ -617,8 +624,8 @@
               alt="Instagram post"
             />
             <a
-              href="#"
-              class="insta-post-link"
+              href="assets/images/insta-2.jpg"
+              class="insta-post-link | glightbox"
               aria-label="Instagram post link"
             >
               <i class="fab fa-instagram fa-4x"></i>
@@ -633,8 +640,8 @@
               alt="Instagram post"
             />
             <a
-              href="#"
-              class="insta-post-link"
+             href="assets/images/insta-3.jpg"
+              class="insta-post-link | glightbox"
               aria-label="Instagram post link"
             >
               <i class="fab fa-instagram fa-4x"></i>
@@ -649,8 +656,8 @@
               alt="Instagram post"
             />
             <a
-              href="#"
-              class="insta-post-link"
+              href="assets/images/insta-4.jpg"
+              class="insta-post-link | glightbox"
               aria-label="Instagram post link"
             >
               <i class="fab fa-instagram fa-4x"></i>
@@ -665,8 +672,8 @@
               alt="Instagram post"
             />
             <a
-              href="#"
-              class="insta-post-link"
+             href="assets/images/insta-5.jpg"
+              class="insta-post-link | glightbox"
               aria-label="Instagram post link"
             >
               <i class="fab fa-instagram fa-4x"></i>
@@ -681,8 +688,8 @@
               alt="Instagram post"
             />
             <a
-              href="#"
-              class="insta-post-link"
+              href="assets/images/insta-6.jpg"
+              class="insta-post-link | glightbox"
               aria-label="Instagram post link"
             >
               <i class="fab fa-instagram fa-4x"></i>
@@ -697,8 +704,8 @@
               alt="Instagram post"
             />
             <a
-              href="#"
-              class="insta-post-link"
+              href="assets/images/insta-7.jpg"
+              class="insta-post-link | glightbox"
               aria-label="Instagram post link"
             >
               <i class="fab fa-instagram fa-4x"></i>
@@ -827,6 +834,8 @@
 
     <!-- External libraries JS files -->
     <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="vendors/aos/aos.js"></script>
+    <script src="vendors/glightbox/glightbox.min.js"></script>
     <!-- Main JS file -->
     <script type="module" src="assets/js/master.js"></script>
   </body>

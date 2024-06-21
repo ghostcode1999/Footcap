@@ -6,10 +6,32 @@ import {
   removeClass,
   toggleClass,
   onScroll,
-  scrollto,
+  onLoad,
 } from "./utils/helpers.js";
 
 (function () {
+  /*
+    #Initialize AOS
+-------------------------------*/
+  AOS.init({
+    duration: 1000,
+    easing: "ease-in-out",
+    once: true,
+    mirror: false,
+  });
+
+  /*
+    #Initialize Products Glightbox
+-------------------------------*/
+  const glightbox = GLightbox({
+    selector: ".glightbox",
+  });
+
+  /*
+    #Toggle is-preloader class on body element when loaded
+-------------------------------*/
+  onLoad(addClass(document.body, "is-preloaded"));
+
   /*
     #Toggle primary navbar
 -------------------------------*/
@@ -29,7 +51,9 @@ import {
 
   allProducts.forEach((product) => {
     productsInnerHTML += `
-        <li class="product-item | is-active" data-badge="${product.filter}">
+        <li class="product-item | is-active" data-badge="${
+          product.filter
+        }" data-aos="fade-up">
               <div class="product-card">
                 <figure class="card-banner">
                   <img src="${product.img}" alt="${
@@ -113,11 +137,9 @@ import {
 
     // Else show only filtered products
     products.forEach((product) => {
-      if (product.dataset.badge === filter) {
-        addClass(product, "is-active");
-      } else {
-        removeClass(product, "is-active");
-      }
+      product.dataset.badge === filter
+        ? addClass(product, "is-active")
+        : removeClass(product, "is-active");
     });
   }
 

@@ -244,6 +244,11 @@
     font-size: var(--fs-400);
     font-weight: var(--fw-normal);
     line-height: 1.6;
+    overflow: hidden;
+
+    &.is-preloaded {
+      overflow-y: auto;
+    }
 
     &:has(.nav-toggler.is-active) {
       overflow-y: hidden;
@@ -610,6 +615,16 @@
   /*
     #Animations
   */
+  @keyframes spin {
+    0% {
+      rotate: 0;
+    }
+
+    100% {
+      rotate: 1turn;
+    }
+  }
+
   @keyframes scale-x {
     0% {
       scale: 0 1;
@@ -660,6 +675,35 @@
   padding-block: 50px;
 }
 
+/*-------------------------------
+    #PRELOADER
+-------------------------------*/
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-content: center;
+  background: hsl(252, 68%, 7%);
+
+  body.is-preloaded & {
+    display: none;
+  }
+
+  span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 8px solid var(--clr-neutral-000);
+    border-radius: 50%;
+    border-block-start-color: transparent;
+    animation: spin 1s infinite linear;
+  }
+}
+
+/*-------------------------------
+    #BACK TO TOP BUTTON
+-------------------------------*/
 .back-top-btn {
   position: fixed;
   inset-block-end: 20px;
