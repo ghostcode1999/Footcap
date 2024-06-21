@@ -130,7 +130,7 @@ import {
     // Add is-active class to clicked button
     removeClass(select(".filter-btn", true), "is-active");
     addClass(filterButton, "is-active");
-
+    AOS.refresh();
     // If no filter, show all products
     if (filter === "*") {
       addClass(products, "is-active");
